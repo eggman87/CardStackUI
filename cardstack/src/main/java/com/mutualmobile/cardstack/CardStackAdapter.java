@@ -285,7 +285,7 @@ public abstract class CardStackAdapter implements View.OnTouchListener, View.OnC
             mParallaxEnabled = false;
         mShowInitAnimation = cardStackLayout.isShowInitAnimation();
         mParentPaddingTop = cardStackLayout.getPaddingTop();
-        fullCardHeight = (int) (mScreenHeight - dp30 - dp8 - getCount() * mCardGapBottom);
+        fullCardHeight = (int) cardStackLayout.getCardHeight();
     }
 
     /**

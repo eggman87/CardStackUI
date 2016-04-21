@@ -30,6 +30,7 @@ public class CardStackLayout extends FrameLayout {
     private boolean mShowInitAnimation;
     private boolean mParallaxEnabled;
     private int mParallaxScale;
+    private float mCardHeight;
     private OnCardSelected mOnCardSelectedListener = null;
 
     private CardStackAdapter mAdapter = null;
@@ -85,6 +86,7 @@ public class CardStackLayout extends FrameLayout {
         mParallaxScale = a.getInteger(R.styleable.CardStackLayout_parallax_scale, getResources().getInteger(R.integer.parallax_scale_default));
         mCardGap = a.getDimension(R.styleable.CardStackLayout_card_gap, getResources().getDimension(R.dimen.card_gap));
         mCardGapBottom = a.getDimension(R.styleable.CardStackLayout_card_gap_bottom, getResources().getDimension(R.dimen.card_gap_bottom));
+        mCardHeight = (int) a.getDimension(R.styleable.CardStackLayout_card_height, LayoutParams.MATCH_PARENT);
 
         a.recycle();
     }
@@ -160,6 +162,22 @@ public class CardStackLayout extends FrameLayout {
      */
     public void setCardGap(float mCardGap) {
         this.mCardGap = mCardGap;
+    }
+
+    /**
+     * Get the card height (in pixels) of each card.
+     * @return
+     */
+    public float getCardHeight() {
+        return mCardHeight;
+    }
+
+    /**
+     * Set the card height (in pixels) of each card.
+     * @param cardHeight the card height.
+     */
+    public void setCardHeight(float cardHeight) {
+        this.mCardHeight = cardHeight;
     }
 
     /**
